@@ -513,17 +513,17 @@ body {
 
 .heartbeat-dedication-card {
   width: 100%;
-  max-width: 660px;
+  max-width: 680px;
   margin: 24px auto 0;
-  padding: 20px 24px;
+  padding: 20px 26px;
   border-radius: var(--radius-md);
   background: linear-gradient(135deg, rgba(32, 14, 48, 0.94), rgba(18, 8, 28, 0.96));
   border: 1.5px solid rgba(255, 117, 151, 0.45);
   box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 94, 131, 0.2);
   display: flex;
   align-items: center;
-  gap: 18px;
-  text-align: right;
+  gap: 20px;
+  text-align: left;
   position: relative;
   overflow: hidden;
   transition: var(--transition-smooth);
@@ -603,13 +603,15 @@ body {
   animation: pulseGlow 2s infinite;
 }
 
-.heartbeat-arabic-message {
-  font-family: var(--font-main);
-  font-size: 1.12rem;
+.heartbeat-message {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
   line-height: 1.6;
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 500;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.2px;
 }
 
 .heartbeat-track-pill {
@@ -658,8 +660,8 @@ body {
   .heartbeat-dedication-body {
     align-items: center;
   }
-  .heartbeat-arabic-message {
-    font-size: 0.98rem;
+  .heartbeat-message {
+    font-size: 1.05rem;
   }
 }
 
