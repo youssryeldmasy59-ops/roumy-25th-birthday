@@ -365,6 +365,25 @@ function initMusicPlayer() {
   bgAudio = document.getElementById('romantic-audio-element');
   if (bgAudio) {
     bgAudio.volume = 1.0; // 100% Full High Volume & Crystal Clear!
+    bgAudio.loop = true;
+
+    // Endless continuous loop safety
+    bgAudio.addEventListener('ended', () => {
+      if (isMusicPlaying) {
+        bgAudio.currentTime = 0;
+        bgAudio.play().catch(() => {});
+      }
+    });
+
+    // Seamless gapless loop turnaround
+    bgAudio.addEventListener('timeupdate', () => {
+      if (bgAudio.duration && bgAudio.currentTime >= bgAudio.duration - 0.15) {
+        if (isMusicPlaying) {
+          bgAudio.currentTime = 0;
+          bgAudio.play().catch(() => {});
+        }
+      }
+    });
   }
 
   const toggleBtn = document.getElementById('music-toggle-btn');
