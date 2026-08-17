@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initReasonsGrid(config.reasons);
   initMemoriesGallery(config.memories);
   initLoveLetter(config);
-  initCoupons(config.coupons);
   initWishGenerator();
   initMusicPlayer();
   initLightbox();
@@ -28,11 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
 function initContent(config) {
   if (config.herName) {
     const navName = document.getElementById('nav-her-name');
-    if (navName) navName.textContent = `Chapter 25 • Roumy & Lark ✨`;
+    if (navName) navName.textContent = `Roumy & Lark ✨`;
   }
   
   if (config.heroBadge) {
-    const badgeText = document.getElementById('hero-badge-text');
+    const badgeText = document.querySelector('.badge-25-sub');
     if (badgeText) badgeText.textContent = config.heroBadge;
   }
 
@@ -51,8 +50,6 @@ function initContent(config) {
   if (config.memoriesTitle) document.getElementById('memories-title').textContent = config.memoriesTitle;
   if (config.memoriesSubtitle) document.getElementById('memories-subtitle').textContent = config.memoriesSubtitle;
   if (config.letterSectionTitle) document.getElementById('letter-section-title').textContent = config.letterSectionTitle;
-  if (config.couponsTitle) document.getElementById('coupons-title').textContent = config.couponsTitle;
-  if (config.couponsSubtitle) document.getElementById('coupons-subtitle').textContent = config.couponsSubtitle;
 }
 
 /**
@@ -150,7 +147,7 @@ function initCountdown(targetDateStr) {
       if (hoursEl) hoursEl.textContent = '00';
       if (minutesEl) minutesEl.textContent = '00';
       if (secondsEl) secondsEl.textContent = '00';
-      if (statusEl) statusEl.textContent = "🎉 It's Roumy's official 25th Birthday today! Let's celebrate! 🎂🥳";
+      if (statusEl) statusEl.textContent = "It's Roumy's official 25th Birthday today! Let's celebrate! 🎂✨";
       return;
     }
 
@@ -185,7 +182,7 @@ function initInteractiveCake(config) {
     if (blown) return;
     blown = true;
     flame.classList.add('blown');
-    instruction.textContent = config.candleBlownText || 'May all your wishes come true! 🎉🥳';
+    instruction.textContent = config.candleBlownText || 'May all your wishes come true! 🎉✨';
     blowBtn.style.display = 'none';
     
     triggerHeartConfetti();
@@ -217,11 +214,15 @@ function initReasonsGrid(reasons) {
         <div class="flip-card-front">
           <div class="card-number-badge">${item.num}</div>
           <h3 class="card-front-title">${item.title}</h3>
-          <span class="card-hint-click">Click to reveal ✨</span>
+          <span class="card-hint-click">Tap to read ✨</span>
         </div>
         <div class="flip-card-back">
           <p class="card-back-text">${item.text}</p>
-          <div class="card-back-heart">💖</div>
+          <div class="card-back-heart">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="#ff7597">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </div>
         </div>
       </div>
     `;
@@ -241,14 +242,14 @@ function initReasonsGrid(reasons) {
         if (allFlipped) c.classList.add('flipped');
         else c.classList.remove('flipped');
       });
-      flipAllBtn.querySelector('span').textContent = allFlipped ? 'Close All Cards 🔄' : 'Flip All Cards 🎴';
+      flipAllBtn.querySelector('span').textContent = allFlipped ? 'Close All Cards ✨' : 'Flip All Cards ✨';
     });
   }
 }
 
 /**
  * -------------------------------------------------------------
- * 📸 6. Clean Polaroid Scrapbook Gallery (No text on the photos)
+ * 📸 6. Clean Polaroid Scrapbook Gallery
  * -------------------------------------------------------------
  */
 function initMemoriesGallery(memories) {
@@ -321,7 +322,6 @@ function initLoveLetter(config) {
   if (letterTitle && config.letterTitle) letterTitle.textContent = config.letterTitle;
   
   if (letterBody && config.letterContent) {
-    // Format text nicely into distinct paragraphs
     const paragraphs = config.letterContent.split('\n\n').filter(p => p.trim());
     letterBody.innerHTML = paragraphs.map(p => `<p class="letter-para">${p.trim()}</p>`).join('');
   }
@@ -339,29 +339,7 @@ function initLoveLetter(config) {
 
 /**
  * -------------------------------------------------------------
- * 🎁 9. VIP Birthday Perks & Coupons
- * -------------------------------------------------------------
- */
-function initCoupons(coupons) {
-  const grid = document.getElementById('coupons-grid');
-  if (!grid || !coupons) return;
-
-  grid.innerHTML = '';
-  coupons.forEach((coupon, i) => {
-    const el = document.createElement('div');
-    el.className = 'coupon-card';
-    el.innerHTML = `
-      <span class="coupon-badge">VIP Voucher #${i + 1} 🎁</span>
-      <h3 class="coupon-title">${coupon.title}</h3>
-      <p class="coupon-desc">${coupon.desc}</p>
-    `;
-    grid.appendChild(el);
-  });
-}
-
-/**
- * -------------------------------------------------------------
- * ⭐ 10. Wish Upon a Star
+ * ⭐ 9. Wish Upon a Star
  * -------------------------------------------------------------
  */
 function initWishGenerator() {
@@ -379,7 +357,7 @@ function initWishGenerator() {
 
 /**
  * -------------------------------------------------------------
- * 🎶 11. Ambient Romantic Synth & Music Player
+ * 🎶 10. Ambient Romantic Synth & Music Player
  * -------------------------------------------------------------
  */
 let audioCtx = null;
@@ -395,12 +373,12 @@ function initMusicPlayer() {
     if (isMusicPlaying) {
       stopRomanticAudio();
       waves.classList.add('paused');
-      label.textContent = 'Play Music';
+      label.textContent = 'Music';
       isMusicPlaying = false;
     } else {
       startRomanticAudio();
       waves.classList.remove('paused');
-      label.textContent = 'Pause Music';
+      label.textContent = 'Music';
       isMusicPlaying = true;
     }
   });
@@ -419,7 +397,7 @@ function startRomanticAudio() {
     const waves = document.getElementById('music-waves');
     const label = document.getElementById('music-label');
     if (waves) waves.classList.remove('paused');
-    if (label) label.textContent = 'Pause Music';
+    if (label) label.textContent = 'Music';
 
     const chords = [
       [261.63, 329.63, 392.00], // C
@@ -443,7 +421,7 @@ function startRomanticAudio() {
     }, 2400);
 
   } catch (e) {
-    console.log('Audio Autoplay policy:', e);
+    console.log('Audio policy:', e);
   }
 }
 
@@ -486,13 +464,13 @@ function playChimeSound() {
 
 /**
  * -------------------------------------------------------------
- * 🎉 12. Confetti Effects
+ * 🎉 11. Confetti Effects
  * -------------------------------------------------------------
  */
 function triggerConfettiBurst() {
   if (typeof confetti === 'function') {
     confetti({
-      particleCount: 100,
+      particleCount: 80,
       spread: 70,
       origin: { y: 0.6 },
       colors: ['#ff5e83', '#fcd34d', '#ffd1dc', '#ffffff', '#e11d48']
@@ -503,9 +481,9 @@ function triggerConfettiBurst() {
 function triggerHeartConfetti() {
   if (typeof confetti === 'function') {
     confetti({
-      particleCount: 60,
-      spread: 90,
-      startVelocity: 35,
+      particleCount: 50,
+      spread: 80,
+      startVelocity: 30,
       shapes: ['star', 'circle'],
       colors: ['#ff5e83', '#fcd34d', '#ff7597', '#fff']
     });
@@ -514,7 +492,7 @@ function triggerHeartConfetti() {
 
 /**
  * -------------------------------------------------------------
- * ✨ 13. Interactive Background Particles Canvas
+ * ✨ 12. Interactive Background Particles Canvas (Lightweight for Mobile)
  * -------------------------------------------------------------
  */
 function initParticles() {
@@ -530,8 +508,9 @@ function initParticles() {
     height = canvas.height = window.innerHeight;
   });
 
+  const isMobile = width < 768;
+  const particleCount = isMobile ? 22 : 45;
   const particles = [];
-  const particleCount = Math.min(width < 768 ? 30 : 55, 60);
 
   class Particle {
     constructor() {
@@ -540,16 +519,16 @@ function initParticles() {
     reset() {
       this.x = Math.random() * width;
       this.y = height + Math.random() * 20;
-      this.size = Math.random() * 8 + 4;
-      this.speedY = Math.random() * 0.8 + 0.3;
-      this.speedX = (Math.random() - 0.5) * 0.4;
-      this.opacity = Math.random() * 0.5 + 0.2;
-      this.isHeart = Math.random() > 0.4;
+      this.size = Math.random() * 7 + 4;
+      this.speedY = Math.random() * 0.7 + 0.3;
+      this.speedX = (Math.random() - 0.5) * 0.3;
+      this.opacity = Math.random() * 0.45 + 0.2;
+      this.isHeart = Math.random() > 0.35;
       this.angle = Math.random() * Math.PI * 2;
     }
     update() {
       this.y -= this.speedY;
-      this.x += Math.sin(this.angle) * 0.5 + this.speedX;
+      this.x += Math.sin(this.angle) * 0.4 + this.speedX;
       this.angle += 0.02;
       if (this.y < -20) this.reset();
     }
