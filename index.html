@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Happy 25th Birthday Roumy ✨</title>
-  <meta name="description" content="A special aesthetic 25th birthday surprise website made with love for Roumy from Lark.">
+  <title>Happy 25th Birthday Roumy 🌹✨</title>
+  <meta name="description" content="A timeless romantic 25th birthday celebration for Roumy from Lark.">
   
-  <!-- Google Fonts: Plus Jakarta Sans, Outfit, Playfair Display, Alex Brush -->
+  <!-- Google Fonts: Playfair Display, Alex Brush, Plus Jakarta Sans, Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Canvas Confetti Library -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
@@ -31,38 +31,38 @@
   <div id="lock-screen" class="lock-screen active">
     <div class="lock-card glass-panel">
       <div class="lock-header">
-        <div class="lock-avatar-glow">
-          <span class="age-pill">25 ✨</span>
-          <div class="delicate-heart-icon">
-            <svg viewBox="0 0 24 24" width="34" height="34" fill="url(#pinkGrad)">
-              <defs>
-                <linearGradient id="pinkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#ff7597"/>
-                  <stop offset="100%" stop-color="#e11d48"/>
-                </linearGradient>
-              </defs>
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-          </div>
+        <div class="vintage-heart-lock">
+          <svg class="heart-lock-svg" viewBox="0 0 24 24" width="44" height="44" fill="url(#roseGoldGrad)">
+            <defs>
+              <linearGradient id="roseGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffe4e6"/>
+                <stop offset="35%" stop-color="#ff7597"/>
+                <stop offset="100%" stop-color="#e11d48"/>
+              </linearGradient>
+            </defs>
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <div class="lock-sparkle-dot">✧</div>
         </div>
-        <span class="lock-badge-tag">VIP BIRTHDAY ACCESS</span>
-        <h1 class="lock-title">For My Girl Roumy ✨</h1>
-        <p class="lock-subtitle">Enter your secret birthday passcode to unlock your special surprise</p>
+        
+        <span class="romantic-script-tag">~ Made only for you ~</span>
+        <h1 class="lock-title">For My Girl Roumy</h1>
+        <p class="lock-subtitle">Enter your secret birthday passcode to unlock your surprise</p>
       </div>
 
       <!-- Passcode Form & Keypad -->
       <div class="passcode-form">
         <div class="input-wrapper">
-          <input type="text" id="passcode-input" placeholder="Enter passcode (2708)" autocomplete="off" inputmode="numeric">
+          <input type="text" id="passcode-input" placeholder="Birthday passcode (2708)" autocomplete="off" inputmode="numeric">
           <button id="unlock-btn" class="glow-button" aria-label="Unlock Surprise">
-            <span>Unlock Surprise</span>
-            <svg class="btn-heart-svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <span>Unlock My Heart</span>
+            <svg class="btn-heart-svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
               <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
             </svg>
           </button>
         </div>
 
-        <div id="error-message" class="error-text hidden">Try your birthday passcode (2708) Roumy ✨</div>
+        <div id="error-message" class="error-text hidden">Try your birthday passcode (2708) Roumy 🌹</div>
         
         <!-- Numeric Touch Keypad -->
         <div class="mobile-keypad">
@@ -77,15 +77,12 @@
           <button class="key-btn" data-val="9">9</button>
           <button class="key-btn special-key" id="clear-btn">CLR</button>
           <button class="key-btn" data-val="0">0</button>
-          <button class="key-btn special-key enter-key" id="submit-pin-btn">GO ➔</button>
+          <button class="key-btn special-key enter-key" id="submit-pin-btn">OPEN 🌹</button>
         </div>
 
         <div class="lock-hints">
           <button id="hint-btn" class="hint-toggle">
-            <svg viewBox="0 0 24 24" width="15" height="15" fill="#fcd34d">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
-            </svg>
-            <span>Need a hint?</span>
+            <span>❦ Need a hint?</span>
           </button>
           <p id="hint-text" class="hint-box hidden"></p>
         </div>
@@ -99,10 +96,8 @@
   <!-- ========================================================================= -->
   <header class="top-nav glass-panel">
     <div class="nav-brand">
-      <svg class="nav-heart-icon" viewBox="0 0 24 24" width="18" height="18" fill="#ff7597">
-        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-      </svg>
-      <span id="nav-her-name" class="brand-text">Roumy & Lark ✨</span>
+      <span class="nav-rose-icon">🌹</span>
+      <span id="nav-her-name" class="brand-text">Roumy & Lark</span>
     </div>
     
     <div class="nav-controls">
@@ -110,8 +105,8 @@
         <div class="music-waves" id="music-waves">
           <span></span><span></span><span></span><span></span>
         </div>
-        <span id="music-label">Music</span>
-        <svg class="nav-music-icon" viewBox="0 0 24 24" width="15" height="15" fill="#ff7597">
+        <span id="music-label">Our Melody</span>
+        <svg class="nav-music-icon" viewBox="0 0 24 24" width="14" height="14" fill="#ff7597">
           <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
         </svg>
       </button>
@@ -128,53 +123,50 @@
     <section class="hero-section">
       <div class="container hero-container">
         
-        <!-- Elegant & Soft Romantic 25 Badge -->
-        <div class="aesthetic-badge-25 animate-float">
-          <div class="badge-outer-glow"></div>
-          <div class="badge-inner-card">
-            <div class="badge-heart-icon-top">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="url(#pinkGrad)">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-            </div>
-            <span class="badge-25-num">25</span>
-            <span class="badge-25-sub">CHAPTER TWENTY-FIVE</span>
+        <!-- Romantic Calligraphy Emblem for 25 -->
+        <div class="romantic-hero-emblem animate-float">
+          <div class="emblem-script-prefix">Celebrating</div>
+          <div class="emblem-script-title">Twenty-Five</div>
+          <div class="emblem-sub-ribbon">
+            <span class="ribbon-line"></span>
+            <span class="ribbon-text">YEARS OF BEAUTY & GRACE</span>
+            <span class="ribbon-line"></span>
           </div>
+          <div class="romantic-flourish-divider">❦ ─── 🌹 ─── ❧</div>
         </div>
 
-        <h1 id="hero-title" class="hero-title">Happy 25th Birthday, Roumy ✨</h1>
-        <p id="hero-subtitle" class="hero-subtitle">To always stay kind, to always stay Roumy—because you truly have the purest, kindest heart and sweetest soul I have ever seen in my entire life ✨</p>
+        <h1 id="hero-title" class="hero-title">Happy 25th Birthday, Roumy</h1>
+        <p id="hero-subtitle" class="hero-subtitle">To always stay kind, to always stay Roumy—because you truly have the purest, kindest heart and sweetest soul I have ever seen in my entire life 🌹</p>
 
-        <!-- Live Countdown Clock to August 27 -->
+        <!-- Romantic Live Countdown Clock to August 27 -->
         <div class="countdown-card glass-panel">
           <div class="countdown-title">
-            <svg class="delicate-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-            </svg>
-            <span id="countdown-heading">Counting Down to August 27th</span>
+            <span class="flourish-sparkle">✧</span>
+            <span id="countdown-heading">Counting down every second until August 27th</span>
+            <span class="flourish-sparkle">✧</span>
           </div>
           <div class="countdown-grid">
             <div class="time-box">
               <span id="days-count" class="time-num">00</span>
               <span class="time-label">DAYS</span>
             </div>
-            <div class="time-divider">:</div>
+            <div class="time-divider">❦</div>
             <div class="time-box">
               <span id="hours-count" class="time-num">00</span>
               <span class="time-label">HOURS</span>
             </div>
-            <div class="time-divider">:</div>
+            <div class="time-divider">❦</div>
             <div class="time-box">
               <span id="minutes-count" class="time-num">00</span>
-              <span class="time-label">MIN</span>
+              <span class="time-label">MINUTES</span>
             </div>
-            <div class="time-divider">:</div>
+            <div class="time-divider">❦</div>
             <div class="time-box">
               <span id="seconds-count" class="time-num">00</span>
-              <span class="time-label">SEC</span>
+              <span class="time-label">SECONDS</span>
             </div>
           </div>
-          <div id="countdown-status" class="countdown-status">Counting down every second with so much love ✨</div>
+          <div id="countdown-status" class="countdown-status">Counting down every heartbeat with so much love 🌹</div>
         </div>
 
         <!-- Interactive 3D Birthday Cake -->
@@ -192,16 +184,16 @@
                   <div class="drip drip3"></div>
                 </div>
                 <!-- Interactive Candle -->
-                <div class="candle" id="birthday-candle" title="Click to blow out the candle!">
+                <div class="candle" id="birthday-candle" title="Tap to blow out your candle!">
                   <div class="flame" id="candle-flame"></div>
                 </div>
               </div>
             </div>
             
             <div class="cake-action-text">
-              <p id="cake-instruction" class="cake-instruction">Make a wish and blow out the candle, Roumy ✨</p>
+              <p id="cake-instruction" class="cake-instruction">Make a wish and blow out your candle, my love 🕯️✨</p>
               <button id="blow-btn" class="glow-button-sm">
-                <span>Blow Candle ✨</span>
+                <span>Blow Candle 🌹</span>
               </button>
             </div>
           </div>
@@ -211,21 +203,20 @@
     </section>
 
 
-    <!-- SECTION: 25 Reasons Why I Love Roumy -->
+    <!-- SECTION: 25 Reasons Why My Heart Chose You -->
     <section class="reasons-section" id="reasons">
       <div class="container">
         <div class="section-header text-center">
-          <div class="section-badge">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="#ff7597">
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-            <span>25 CHAPTERS OF LOVE</span>
+          <div class="romantic-section-badge">
+            <span class="badge-floral-icon">❦</span>
+            <span>CHAPTERS OF MY HEART</span>
+            <span class="badge-floral-icon">❧</span>
           </div>
-          <h2 id="reasons-title" class="section-title">25 Reasons Why Roumy Is My Favorite Person ✨</h2>
-          <p id="reasons-subtitle" class="section-desc">From our silly everyday moments to the deepest parts of your soul.</p>
+          <h2 id="reasons-title" class="section-title">25 Reasons Why My Heart Chose You</h2>
+          <p id="reasons-subtitle" class="section-desc">From our silly everyday moments to the deepest pieces of your soul.</p>
           <div class="reasons-controls">
-            <button id="flip-all-btn" class="glass-btn-pill">
-              <span>Flip All Cards ✨</span>
+            <button id="flip-all-btn" class="romantic-pill-btn">
+              <span>Reveal All Reasons 🌹</span>
             </button>
           </div>
         </div>
@@ -242,14 +233,13 @@
     <section class="memories-section" id="memories">
       <div class="container">
         <div class="section-header text-center">
-          <div class="section-badge">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="#ff7597">
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-            <span>OUR POLAROID MEMORIES</span>
+          <div class="romantic-section-badge">
+            <span class="badge-floral-icon">❦</span>
+            <span>OUR LOVE IN POLAROIDS</span>
+            <span class="badge-floral-icon">❧</span>
           </div>
-          <h2 id="memories-title" class="section-title">Our Polaroid Scrapbook ✨</h2>
-          <p id="memories-subtitle" class="section-desc">A collection of our favorite mirror selfies and unforgettable moments together.</p>
+          <h2 id="memories-title" class="section-title">Moments Frozen in Time</h2>
+          <p id="memories-subtitle" class="section-desc">A collection of our favorite mirror selfies and unforgettable memories together.</p>
         </div>
 
         <!-- Polaroid Scrapbook Gallery -->
@@ -264,14 +254,13 @@
     <section class="letter-section" id="letter">
       <div class="container">
         <div class="section-header text-center">
-          <div class="section-badge">
-            <svg viewBox="0 0 24 24" width="14" height="14" fill="#ff7597">
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-            <span>SPECIAL DELIVERY FROM LARK</span>
+          <div class="romantic-section-badge">
+            <span class="badge-floral-icon">❦</span>
+            <span>FROM MY HEART TO YOURS</span>
+            <span class="badge-floral-icon">❧</span>
           </div>
-          <h2 id="letter-section-title" class="section-title">A Birthday Note For Roumy</h2>
-          <p class="section-desc">Tap on the wax seal to unfold the letter & read your message 💌</p>
+          <h2 id="letter-section-title" class="section-title">A Handwritten Note For Roumy</h2>
+          <p class="section-desc">Tap on the wax seal to unfold your letter 💌</p>
         </div>
 
         <div class="envelope-container">
@@ -283,13 +272,13 @@
               <!-- Letter Paper Inside -->
               <div class="letter-paper" id="letter-paper">
                 <div class="letter-inner">
-                  <div class="letter-decor-top">❦ ❧</div>
-                  <h3 id="letter-title" class="letter-heading">Happy 25th Birthday, Roumy ✨</h3>
+                  <div class="letter-decor-top">❦ ─── 🌹 ─── ❧</div>
+                  <h3 id="letter-title" class="letter-heading">Happy 25th Birthday, My Love</h3>
                   <div id="letter-body" class="letter-body-text">
                     <!-- Populated from config.js -->
                   </div>
                   <div class="letter-signature-box">
-                    <span class="handwritten-sig" id="letter-sig">Forever & always yours,<br>Lark ✨</span>
+                    <span class="handwritten-sig" id="letter-sig">Forever & always yours,<br>Lark 🌹✨</span>
                   </div>
                 </div>
               </div>
@@ -300,10 +289,8 @@
               <!-- Red Wax Seal Button with Heart -->
               <div class="wax-seal" id="wax-seal" title="Tap to break seal and open letter">
                 <div class="seal-inner">
-                  <svg viewBox="0 0 24 24" width="22" height="22" fill="#fff">
-                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                  </svg>
-                  <span>25</span>
+                  <span class="seal-rose-icon">🌹</span>
+                  <span class="seal-num-text">XXV</span>
                 </div>
               </div>
             </div>
@@ -318,21 +305,17 @@
       <div class="container">
         <div class="wish-star-card glass-panel">
           <div class="wish-header">
-            <div class="delicate-star-pulse">
-              <svg viewBox="0 0 24 24" width="30" height="30" fill="url(#pinkGrad)">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-              </svg>
-            </div>
-            <h3>Make a 25th Birthday Wish, Roumy ✨</h3>
+            <div class="delicate-rose-heart">🌹</div>
+            <h3>Whisper a Birthday Wish to the Stars</h3>
           </div>
           <div class="wish-input-row">
-            <input type="text" id="user-wish-input" placeholder="Type your birthday wish here...">
+            <input type="text" id="user-wish-input" placeholder="Type your deepest wish here...">
             <button id="send-wish-btn" class="glow-button">
-              <span>Send Wish ✨</span>
+              <span>Send With Love 🌹</span>
             </button>
           </div>
           <div id="wish-response" class="wish-response-text hidden">
-            ✨ Your wish has been sent to the stars! May all your wildest dreams come true, Roumy! ✨
+            ✨ Your wish has been whispered to the universe. May all your dreams come true, my love! 🌹
           </div>
         </div>
       </div>
@@ -341,12 +324,12 @@
     <!-- FOOTER -->
     <footer class="romantic-footer text-center">
       <div class="footer-heart-glow">
-        <svg viewBox="0 0 24 24" width="28" height="28" fill="#ff7597">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="url(#roseGoldGrad)">
           <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
         </svg>
       </div>
-      <p class="footer-main-text">Happy 25th Birthday to Roumy</p>
-      <p class="footer-sub-text">Crafted with love by Lark exclusively for Roumy ✨</p>
+      <p class="footer-main-text">Happy 25th Birthday to Roumy, My Soulmate</p>
+      <p class="footer-sub-text">Handcrafted with all my love by Lark 🌹✨</p>
     </footer>
 
   </main>

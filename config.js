@@ -17,23 +17,23 @@ window.BIRTHDAY_CONFIG = {
   
   // Passcodes (August 27 -> 2708, 27/08, 27, etc.)
   passcodes: ["2708", "27/08", "27-08", "27", "27082001", "27/08/2001", "0827", "827"],
-  passcodeHint: "The day the world got 1000x prettier ✨ (27 / 08)",
+  passcodeHint: "The day the world was blessed with you 🌹 (27 / 08)",
 
   // -------------------------------------------------------------
-  // 2. Hero Section & Interactive Cake (Delicate & Aesthetic)
+  // 2. Hero Section & Interactive Cake
   // -------------------------------------------------------------
-  heroBadge: "CHAPTER TWENTY-FIVE ✨",
-  heroTitle: "Happy 25th Birthday, Roumy ✨",
-  heroSubtitle: "To always stay kind, to always stay Roumy—because you truly have the purest, kindest heart and sweetest soul I have ever seen in my entire life ✨",
-  blowCandleText: "Make a wish and blow out the candle, Roumy ✨",
-  candleBlownText: "May all your sweetest wishes come true this year ✨",
-  countdownTitle: "Counting Down to Roumy's Big Day • August 27",
+  heroPrefix: "Celebrating",
+  heroTitle: "Happy 25th Birthday, Roumy",
+  heroSubtitle: "To always stay kind, to always stay Roumy—because you truly have the purest, kindest heart and sweetest soul I have ever seen in my entire life 🌹",
+  blowCandleText: "Make a wish and blow out your candle, my love 🕯️✨",
+  candleBlownText: "May every single wish in your beautiful heart come true this year 🌹✨",
+  countdownTitle: "Counting down every second until August 27th",
 
   // -------------------------------------------------------------
   // 3. 25 Reasons (Progression from Fun/Light to Deep & Soulful)
   // -------------------------------------------------------------
-  reasonsSectionTitle: "25 Reasons Why Roumy Is My Favorite Person ✨",
-  reasonsSectionSubtitle: "From our silly everyday moments to the deepest parts of your soul.",
+  reasonsSectionTitle: "25 Reasons Why My Heart Chose You",
+  reasonsSectionSubtitle: "From our silly everyday moments to the deepest pieces of your soul.",
   reasons: [
     { num: 1, title: "Our Silly Mirror Selfies", text: "Every mirror we pass in every mall or hotel instantly turns into our private photoshoot." },
     { num: 2, title: "Your Signature Perfumes", text: "How you always smell so incredible (and I proudly take credit for picking the best bottles ✨)." },
@@ -59,13 +59,13 @@ window.BIRTHDAY_CONFIG = {
     { num: 22, title: "How Much We've Grown", text: "Looking back at our journey and knowing we share a rare, genuine connection." },
     { num: 23, title: "Your Resilience & Strength", text: "How gracefully you handle life's hurdles and come out even stronger and wiser." },
     { num: 24, title: "Choosing Each Other", text: "Out of 8 billion people, having you choose me to walk beside you is my greatest flex." },
-    { num: 25, title: "Loving Every Piece of Roumy", text: "Your mind, your pure heart, your laughter, and your soul. Always stay kind, always stay Roumy—I'm in this with you for the long run ✨" }
+    { num: 25, title: "Loving Every Piece of Roumy", text: "Your mind, your pure heart, your laughter, and your soul. Always stay kind, always stay Roumy—I'm in this with you for the long run 🌹✨" }
   ],
 
   // -------------------------------------------------------------
   // 4. Polaroid Scrapbook with Real Photos
   // -------------------------------------------------------------
-  memoriesTitle: "Our Polaroid Scrapbook ✨",
+  memoriesTitle: "Moments Frozen in Time",
   memoriesSubtitle: "A collection of our favorite mirror selfies and unforgettable memories.",
   memories: [
     { image: "assets/images/our_photo_1.jpg" },
@@ -80,9 +80,9 @@ window.BIRTHDAY_CONFIG = {
   // -------------------------------------------------------------
   // 5. The Love Letter for Roumy (From Lark)
   // -------------------------------------------------------------
-  letterSectionTitle: "A Birthday Note For Roumy ✨",
+  letterSectionTitle: "A Handwritten Note For Roumy",
   letterBadge: "Special Delivery from Lark",
-  letterTitle: "Happy 25th Birthday, Roumy ✨",
+  letterTitle: "Happy 25th Birthday, My Love 🌹",
   letterContent: `Dearest Roumy,
 
 Happy 25th Birthday, my love! ✨
@@ -96,5 +96,5 @@ More than anything, I want you to know how deeply I appreciate how you always st
 As you step into this iconic chapter 25, never lose the sweetness that makes you who you are. Always stay kind, and always stay Roumy. I wish you endless happiness, unstoppable success, and every dream your heart desires fulfilled. I promise to always be here to hype you up, hold your hand, and love you through every season.
 
 Happy 25th birthday, my queen.`,
-  letterSignature: "Forever & always yours,\nLark ✨"
+  letterSignature: "Forever & always yours,\nLark 🌹✨"
 };

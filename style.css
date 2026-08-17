@@ -1,28 +1,30 @@
 /* ==========================================================================
-   🎂 Modern Aesthetic 25th Birthday Theme (For Roumy from Lark) 💖
+   🌹 Modern Luxury Romantic 25th Birthday Theme (For Roumy from Lark) 💖
    ========================================================================== */
 
 :root {
-  /* Color Palette: Velvet Rose, Champagne Gold & Crystal Accents */
-  --bg-primary: #0a0710;
-  --bg-secondary: #140d1f;
-  --bg-card: rgba(18, 10, 28, 0.86);
-  --bg-card-hover: rgba(30, 16, 46, 0.94);
+  /* High-Fashion Romantic Palette: Velvet Bordeaux, Rose Gold, Warm Champagne & Petal Rose */
+  --bg-primary: #0a0610;
+  --bg-secondary: #130a1c;
+  --bg-card: rgba(20, 10, 30, 0.88);
+  --bg-card-hover: rgba(32, 16, 48, 0.95);
   
   --primary-pink: #ff5e83;
   --primary-rose: #ff7597;
   --soft-rose: #ffd1dc;
+  --velvet-wine: #831843;
   --gold-accent: #fcd34d;
-  --gold-glow: rgba(252, 211, 77, 0.4);
-  --pink-glow: rgba(255, 94, 131, 0.45);
+  --rose-gold: #fbcfe8;
+  --gold-glow: rgba(252, 211, 77, 0.45);
+  --pink-glow: rgba(255, 117, 151, 0.5);
   
   --text-main: #ffffff;
-  --text-muted: #e2d9f3;
-  --text-dim: #b8a9cf;
+  --text-muted: #e5daf3;
+  --text-dim: #bbaecf;
   
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --glass-border-hover: rgba(255, 94, 131, 0.5);
-  --glass-shadow: 0 16px 45px rgba(0, 0, 0, 0.55);
+  --glass-border: rgba(255, 182, 193, 0.22);
+  --glass-border-hover: rgba(255, 117, 151, 0.6);
+  --glass-shadow: 0 16px 45px rgba(0, 0, 0, 0.6);
   
   --font-main: 'Plus Jakarta Sans', 'Outfit', sans-serif;
   --font-display: 'Playfair Display', serif;
@@ -49,7 +51,7 @@ html {
 
 body {
   font-family: var(--font-main);
-  background-color: #120c1a;
+  background-color: #100818;
   color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
@@ -58,7 +60,7 @@ body {
 }
 
 ::selection {
-  background: var(--primary-pink);
+  background: var(--primary-rose);
   color: #fff;
 }
 
@@ -108,13 +110,13 @@ body {
   background: var(--bg-card);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border: 1px solid var(--glass-border);
+  border: 1.5px solid var(--glass-border);
   border-radius: var(--radius-md);
   box-shadow: var(--glass-shadow);
 }
 
 /* ==========================================================================
-   🔒 1. Passcode Lock Screen (VIP Birthday Gate)
+   🔒 1. Passcode Lock Screen (Vintage Romantic Gate)
    ========================================================================== */
 
 .lock-screen {
@@ -123,7 +125,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(14, 8, 22, 0.88);
+  background: rgba(14, 6, 22, 0.88);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   display: flex;
@@ -144,22 +146,22 @@ body {
 .lock-card {
   width: 100%;
   max-width: 420px;
-  padding: 34px 24px;
+  padding: 36px 24px;
   text-align: center;
-  background: rgba(22, 12, 34, 0.94);
+  background: rgba(22, 10, 34, 0.95);
   border: 1.5px solid rgba(255, 117, 151, 0.45);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85), 0 0 40px rgba(255, 94, 131, 0.3);
   animation: floatCard 6s ease-in-out infinite;
   border-radius: var(--radius-lg);
 }
 
-.lock-avatar-glow {
+.vintage-heart-lock {
   position: relative;
   width: 76px;
   height: 76px;
-  margin: 0 auto 14px;
-  background: radial-gradient(circle, rgba(255, 94, 131, 0.3) 0%, rgba(30, 15, 45, 0.95) 70%);
-  border: 1.5px solid rgba(255, 117, 151, 0.55);
+  margin: 0 auto 12px;
+  background: radial-gradient(circle, rgba(255, 94, 131, 0.35) 0%, rgba(30, 15, 45, 0.95) 70%);
+  border: 1.5px solid rgba(255, 182, 193, 0.5);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -167,42 +169,30 @@ body {
   box-shadow: 0 0 30px var(--pink-glow);
 }
 
-.age-pill {
-  position: absolute;
-  top: -6px;
-  right: -6px;
-  background: linear-gradient(135deg, var(--gold-accent), #f59e0b);
-  color: #2e1000;
-  font-weight: 800;
-  font-size: 0.78rem;
-  padding: 3px 9px;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.delicate-heart-icon {
+.heart-lock-svg {
   animation: heartBeat 1.4s ease-in-out infinite;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.lock-badge-tag {
-  display: inline-block;
-  font-size: 0.7rem;
-  letter-spacing: 2px;
-  font-weight: 800;
+.lock-sparkle-dot {
+  position: absolute;
+  top: 4px;
+  right: 4px;
   color: var(--gold-accent);
-  background: rgba(252, 211, 77, 0.12);
-  border: 1px solid rgba(252, 211, 77, 0.3);
-  padding: 3px 12px;
-  border-radius: 20px;
-  margin-bottom: 10px;
+  font-size: 0.95rem;
+  animation: pulseGlow 2s infinite;
+}
+
+.romantic-script-tag {
+  display: block;
+  font-family: var(--font-script);
+  font-size: 1.35rem;
+  color: var(--soft-rose);
+  margin-bottom: 4px;
 }
 
 .lock-title {
   font-family: var(--font-display);
-  font-size: 1.65rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: #fff;
   margin-bottom: 6px;
@@ -265,10 +255,6 @@ body {
 .glow-button:hover, .glow-button:active {
   transform: scale(0.98);
   box-shadow: 0 12px 30px rgba(255, 94, 131, 0.7);
-}
-
-.btn-heart-svg {
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .glow-button-sm {
@@ -350,7 +336,7 @@ body {
   background: transparent;
   border: none;
   color: var(--text-muted);
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -396,21 +382,23 @@ body {
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   font-weight: 700;
   font-size: 0.95rem;
   color: #fff;
 }
 
+.nav-rose-icon {
+  font-size: 1.1rem;
+}
+
 .brand-text {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
   background: linear-gradient(135deg, #fff, var(--soft-rose));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-.nav-heart-icon {
-  animation: heartBeat 1.4s infinite;
 }
 
 .music-btn {
@@ -461,11 +449,11 @@ body {
 
 
 /* ==========================================================================
-   💖 3. Hero Section (Delicate Aesthetic 25 Badge & Cake)
+   💖 3. Romantic Hero Section (Calligraphy 25 & Heartfelt Aura)
    ========================================================================== */
 
 .hero-section {
-  padding-top: 105px;
+  padding-top: 100px;
   padding-bottom: 50px;
   text-align: center;
   position: relative;
@@ -477,71 +465,65 @@ body {
   align-items: center;
 }
 
-/* ✨ Romantic & Aesthetic 25 Badge */
-.aesthetic-badge-25 {
-  position: relative;
-  margin-bottom: 20px;
-  padding: 4px;
-}
-
-.badge-outer-glow {
-  position: absolute;
-  top: -8px;
-  left: -8px;
-  right: -8px;
-  bottom: -8px;
-  background: radial-gradient(circle, rgba(255, 117, 151, 0.4) 0%, transparent 70%);
-  border-radius: 40px;
-  z-index: 0;
-  filter: blur(8px);
-}
-
-.badge-inner-card {
-  position: relative;
-  z-index: 1;
-  background: linear-gradient(145deg, rgba(32, 18, 48, 0.94), rgba(18, 9, 28, 0.96));
-  border: 1.5px solid rgba(255, 117, 151, 0.5);
-  border-radius: 32px;
-  padding: 12px 28px 14px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.65), 0 0 25px rgba(255, 94, 131, 0.25);
+/* 🌹 Romantic Calligraphy 25 Emblem */
+.romantic-hero-emblem {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  margin-bottom: 16px;
+  position: relative;
 }
 
-.badge-heart-icon-top {
-  animation: heartBeat 1.4s infinite;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2px;
+.emblem-script-prefix {
+  font-family: var(--font-script);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: var(--soft-rose);
+  margin-bottom: -10px;
+  text-shadow: 0 0 15px rgba(255, 117, 151, 0.4);
 }
 
-.badge-25-num {
-  font-family: var(--font-display);
-  font-size: 3rem;
-  font-weight: 800;
-  letter-spacing: -1px;
-  line-height: 1;
-  background: linear-gradient(135deg, #ffffff 10%, #ffd1dc 45%, #fcd34d 85%);
+.emblem-script-title {
+  font-family: var(--font-script);
+  font-size: clamp(3.8rem, 9vw, 5.8rem);
+  line-height: 1.1;
+  background: linear-gradient(135deg, #ffffff 15%, #ffd1dc 45%, #fcd34d 85%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 8px rgba(255, 94, 131, 0.4));
+  filter: drop-shadow(0 4px 18px rgba(255, 94, 131, 0.5));
+  margin-bottom: 4px;
 }
 
-.badge-25-sub {
-  font-size: 0.68rem;
-  letter-spacing: 2.5px;
-  font-weight: 800;
+.emblem-sub-ribbon {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 2px;
+}
+
+.ribbon-line {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--glass-border), transparent);
+}
+
+.ribbon-text {
+  font-size: 0.72rem;
+  letter-spacing: 3px;
+  font-weight: 700;
   color: var(--soft-rose);
   text-transform: uppercase;
-  margin-top: 3px;
+}
+
+.romantic-flourish-divider {
+  color: var(--primary-rose);
+  font-size: 1.1rem;
+  margin-top: 8px;
+  opacity: 0.85;
 }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(1.85rem, 5.5vw, 3.2rem);
+  font-size: clamp(2rem, 5.5vw, 3.4rem);
   font-weight: 800;
   margin-bottom: 12px;
   color: #fff;
@@ -550,23 +532,26 @@ body {
 }
 
 .hero-subtitle {
-  font-size: clamp(0.95rem, 2.8vw, 1.2rem);
-  color: var(--text-main);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1rem, 2.8vw, 1.25rem);
+  color: var(--soft-rose);
   max-width: 680px;
   margin-bottom: 30px;
-  font-weight: 500;
+  font-weight: 400;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
-  background: rgba(18, 10, 28, 0.72);
-  padding: 10px 18px;
-  border-radius: 20px;
-  line-height: 1.6;
+  background: rgba(18, 10, 28, 0.76);
+  padding: 12px 22px;
+  border-radius: 24px;
+  line-height: 1.65;
+  border: 1px solid rgba(255, 182, 193, 0.2);
 }
 
 /* Countdown Card */
 .countdown-card {
   width: 100%;
   max-width: 600px;
-  padding: 20px 14px;
+  padding: 22px 16px;
   margin-bottom: 32px;
   background: rgba(18, 10, 28, 0.9);
   border: 1.5px solid rgba(252, 211, 77, 0.35);
@@ -577,11 +562,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 8px;
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--gold-accent);
   margin-bottom: 14px;
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+.flourish-sparkle {
+  font-size: 0.75rem;
+  color: var(--primary-rose);
 }
 
 .countdown-grid {
@@ -593,7 +585,7 @@ body {
 
 .time-box {
   background: rgba(0, 0, 0, 0.65);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 182, 193, 0.2);
   padding: 8px 10px;
   border-radius: var(--radius-sm);
   min-width: 62px;
@@ -603,8 +595,8 @@ body {
 }
 
 .time-num {
-  font-size: 1.6rem;
-  font-weight: 800;
+  font-size: 1.65rem;
+  font-weight: 700;
   color: #fff;
   font-family: var(--font-display);
   line-height: 1.1;
@@ -612,23 +604,24 @@ body {
 
 .time-label {
   font-size: 0.68rem;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   color: var(--text-muted);
   font-weight: 700;
   margin-top: 2px;
 }
 
 .time-divider {
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-size: 0.9rem;
   color: var(--primary-rose);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .countdown-status {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--soft-rose);
   margin-top: 12px;
+  font-family: var(--font-display);
+  font-style: italic;
 }
 
 /* 3D Cake Container */
@@ -750,26 +743,31 @@ body {
   margin-bottom: 36px;
 }
 
-.section-badge {
+.romantic-section-badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: rgba(20, 10, 30, 0.9);
-  color: var(--primary-rose);
-  border: 1.5px solid rgba(255, 94, 131, 0.45);
-  padding: 5px 16px;
+  gap: 8px;
+  background: rgba(26, 12, 38, 0.92);
+  color: var(--soft-rose);
+  border: 1px solid rgba(255, 182, 193, 0.35);
+  padding: 5px 18px;
   border-radius: 30px;
   font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 1.2px;
+  font-weight: 700;
+  letter-spacing: 2px;
   margin-bottom: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
+.badge-floral-icon {
+  color: var(--primary-rose);
+  font-size: 0.9rem;
+}
+
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(1.65rem, 4.5vw, 2.5rem);
-  font-weight: 800;
+  font-size: clamp(1.75rem, 4.5vw, 2.6rem);
+  font-weight: 700;
   margin-bottom: 8px;
   color: #fff;
   text-shadow: 0 3px 12px rgba(0, 0, 0, 0.85);
@@ -777,7 +775,7 @@ body {
 
 .section-desc {
   font-size: 0.98rem;
-  color: var(--text-main);
+  color: var(--text-muted);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
@@ -785,11 +783,11 @@ body {
   margin-top: 14px;
 }
 
-.glass-btn-pill {
-  background: rgba(18, 10, 28, 0.88);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: #fff;
-  padding: 8px 20px;
+.romantic-pill-btn {
+  background: rgba(22, 10, 32, 0.9);
+  border: 1px solid rgba(255, 182, 193, 0.35);
+  color: var(--soft-rose);
+  padding: 8px 22px;
   border-radius: 30px;
   font-family: var(--font-main);
   font-weight: 700;
@@ -798,8 +796,9 @@ body {
   transition: var(--transition-smooth);
 }
 
-.glass-btn-pill:hover, .glass-btn-pill:active {
+.romantic-pill-btn:hover, .romantic-pill-btn:active {
   background: var(--primary-pink);
+  color: #fff;
   border-color: var(--primary-pink);
   box-shadow: 0 6px 20px var(--pink-glow);
   transform: scale(0.98);
@@ -849,26 +848,27 @@ body {
 }
 
 .flip-card-front {
-  background: linear-gradient(145deg, rgba(28, 16, 42, 0.94), rgba(16, 9, 24, 0.97));
-  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(145deg, rgba(28, 14, 42, 0.94), rgba(16, 8, 24, 0.97));
+  border: 1.5px solid rgba(255, 182, 193, 0.22);
   transition: var(--transition-smooth);
 }
 
 .flip-card:hover .flip-card-front {
-  border-color: var(--primary-pink);
+  border-color: var(--primary-rose);
   box-shadow: 0 10px 30px var(--pink-glow);
 }
 
 .card-number-badge {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-pink), #831843);
+  background: radial-gradient(circle, #be185d 0%, #831843 70%, #4c0519 100%);
+  border: 1px solid rgba(255, 182, 193, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.25rem;
-  font-weight: 800;
+  font-size: 1.15rem;
+  font-weight: 700;
   color: #fff;
   font-family: var(--font-display);
   margin-bottom: 10px;
@@ -1011,7 +1011,7 @@ body {
 .envelope-wrapper {
   position: relative;
   width: 100%;
-  background: rgba(26, 14, 38, 0.94);
+  background: rgba(26, 12, 38, 0.95);
   border-radius: var(--radius-lg);
   padding: 24px 16px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65);
@@ -1056,10 +1056,19 @@ body {
   flex-direction: column;
   align-items: center;
   color: #fef2f2;
-  font-weight: 800;
-  font-size: 1.1rem;
   font-family: var(--font-display);
-  gap: 2px;
+  gap: 1px;
+}
+
+.seal-rose-icon {
+  font-size: 1.1rem;
+}
+
+.seal-num-text {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #fef08a;
 }
 
 .envelope.open .wax-seal {
@@ -1096,7 +1105,7 @@ body {
 .letter-decor-top {
   text-align: center;
   color: #b45309;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   margin-bottom: 10px;
 }
 
@@ -1129,7 +1138,7 @@ body {
 
 .handwritten-sig {
   font-family: var(--font-script);
-  font-size: 1.85rem;
+  font-size: 2rem;
   color: #b91c1c;
 }
 
@@ -1156,15 +1165,16 @@ body {
   margin-bottom: 18px;
 }
 
-.delicate-star-pulse {
-  display: inline-block;
+.delicate-rose-heart {
+  font-size: 1.8rem;
   margin-bottom: 6px;
   animation: pulseGlow 2s infinite;
 }
 
 .wish-header h3 {
-  font-size: 1.15rem;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
   color: #fff;
 }
 
@@ -1314,7 +1324,7 @@ body {
 }
 
 .footer-main-text {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   font-family: var(--font-display);
   background: linear-gradient(135deg, #fff, var(--soft-rose));
@@ -1331,7 +1341,7 @@ body {
 /* Animations */
 @keyframes heartBeat {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.16); }
+  50% { transform: scale(1.15); }
 }
 
 @keyframes floatCard {
@@ -1389,9 +1399,9 @@ body {
     height: 195px;
   }
   .card-number-badge {
-    width: 38px;
-    height: 38px;
-    font-size: 1.05rem;
+    width: 36px;
+    height: 36px;
+    font-size: 0.98rem;
     margin-bottom: 6px;
   }
   .card-front-title {
@@ -1431,8 +1441,8 @@ body {
     font-size: 0.62rem;
   }
   .time-divider {
-    font-size: 1.1rem;
-    margin-bottom: 6px;
+    font-size: 0.8rem;
+    margin-bottom: 4px;
   }
   .letter-paper {
     padding: 24px 16px;
@@ -1444,7 +1454,7 @@ body {
     font-size: 0.92rem;
   }
   .handwritten-sig {
-    font-size: 1.55rem;
+    font-size: 1.65rem;
   }
 }
 
