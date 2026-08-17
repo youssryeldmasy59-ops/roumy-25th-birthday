@@ -27,11 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
 function initContent(config) {
   if (config.herName) {
     const navName = document.getElementById('nav-her-name');
-    if (navName) navName.textContent = `Roumy & Lark ✨`;
+    if (navName) navName.textContent = `Roumy & Lark`;
   }
   
   if (config.heroBadge) {
-    const badgeText = document.querySelector('.badge-25-sub');
+    const badgeText = document.querySelector('.ribbon-text');
     if (badgeText) badgeText.textContent = config.heroBadge;
   }
 
@@ -89,7 +89,7 @@ function initPasscodeGate(config) {
       playChimeSound();
       
       lockScreen.classList.add('unlocked');
-      startRomanticAudio();
+      startNostalgicPiano();
     } else {
       errorMsg.classList.remove('hidden');
       const lockCard = document.querySelector('.lock-card');
@@ -147,7 +147,7 @@ function initCountdown(targetDateStr) {
       if (hoursEl) hoursEl.textContent = '00';
       if (minutesEl) minutesEl.textContent = '00';
       if (secondsEl) secondsEl.textContent = '00';
-      if (statusEl) statusEl.textContent = "It's Roumy's official 25th Birthday today! Let's celebrate! 🎂✨";
+      if (statusEl) statusEl.innerHTML = "✨ 🎉 IT'S OFFICIALLY ROUMY'S 25TH BIRTHDAY TODAY! 🎂 🌹 ✨";
       return;
     }
 
@@ -182,7 +182,7 @@ function initInteractiveCake(config) {
     if (blown) return;
     blown = true;
     flame.classList.add('blown');
-    instruction.textContent = config.candleBlownText || 'May all your wishes come true! 🎉✨';
+    instruction.textContent = config.candleBlownText || 'May every single wish in your heart come true! 🌹✨';
     blowBtn.style.display = 'none';
     
     triggerHeartConfetti();
@@ -195,7 +195,7 @@ function initInteractiveCake(config) {
 
 /**
  * -------------------------------------------------------------
- * 🎴 5. 25 Reasons 3D Flip Cards Grid (Progression from Fun to Deep)
+ * 🎴 5. 25 Reasons 3D Flip Cards Grid
  * -------------------------------------------------------------
  */
 function initReasonsGrid(reasons) {
@@ -214,15 +214,11 @@ function initReasonsGrid(reasons) {
         <div class="flip-card-front">
           <div class="card-number-badge">${item.num}</div>
           <h3 class="card-front-title">${item.title}</h3>
-          <span class="card-hint-click">Tap to read ✨</span>
+          <span class="card-hint-click">Tap to read 🌹</span>
         </div>
         <div class="flip-card-back">
           <p class="card-back-text">${item.text}</p>
-          <div class="card-back-heart">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="#ff7597">
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-          </div>
+          <div class="card-back-heart">🌹</div>
         </div>
       </div>
     `;
@@ -242,7 +238,7 @@ function initReasonsGrid(reasons) {
         if (allFlipped) c.classList.add('flipped');
         else c.classList.remove('flipped');
       });
-      flipAllBtn.querySelector('span').textContent = allFlipped ? 'Close All Cards ✨' : 'Flip All Cards ✨';
+      flipAllBtn.querySelector('span').textContent = allFlipped ? 'Close All Reasons 🌹' : 'Reveal All Reasons 🌹';
     });
   }
 }
@@ -357,12 +353,15 @@ function initWishGenerator() {
 
 /**
  * -------------------------------------------------------------
- * 🎶 10. Ambient Romantic Synth & Music Player
+ * 🎹 10. Deeply Romantic, Emotional & Nostalgic Piano Soundscape
+ * (Inspired by Cinematic Emotional Piano & Nostalgic Memories)
  * -------------------------------------------------------------
  */
 let audioCtx = null;
 let isMusicPlaying = false;
-let synthInterval = null;
+let pianoMelodyTimeout = null;
+let delayNode = null;
+let reverbGain = null;
 
 function initMusicPlayer() {
   const toggleBtn = document.getElementById('music-toggle-btn');
@@ -371,93 +370,191 @@ function initMusicPlayer() {
 
   toggleBtn.addEventListener('click', () => {
     if (isMusicPlaying) {
-      stopRomanticAudio();
+      stopNostalgicPiano();
       waves.classList.add('paused');
-      label.textContent = 'Music';
+      label.textContent = 'Our Melody';
       isMusicPlaying = false;
     } else {
-      startRomanticAudio();
+      startNostalgicPiano();
       waves.classList.remove('paused');
-      label.textContent = 'Music';
+      label.textContent = 'Playing 🌹';
       isMusicPlaying = true;
     }
   });
 }
 
-function startRomanticAudio() {
+function setupAudioContext() {
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  if (audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
+
+  // Create subtle stereo acoustic space & delay
+  if (!delayNode) {
+    delayNode = audioCtx.createDelay();
+    delayNode.delayTime.value = 0.32;
+
+    reverbGain = audioCtx.createGain();
+    reverbGain.gain.value = 0.3;
+
+    delayNode.connect(reverbGain);
+    reverbGain.connect(delayNode);
+    reverbGain.connect(audioCtx.destination);
+  }
+}
+
+/**
+ * Rich Felt Grand Piano Note Synthesizer with Harmonics
+ */
+function playPianoNote(freq, timeOffset = 0, duration = 3.2, velocity = 0.08) {
+  if (!audioCtx || audioCtx.state !== 'running') return;
+
+  const startTime = audioCtx.currentTime + timeOffset;
+
+  // 1. Fundamental Tone (Warm Acoustic Body)
+  const osc1 = audioCtx.createOscillator();
+  const gain1 = audioCtx.createGain();
+  osc1.type = 'sine';
+  osc1.frequency.setValueAtTime(freq, startTime);
+
+  // 2. Second Harmonic (Felt Hammer Warmth)
+  const osc2 = audioCtx.createOscillator();
+  const gain2 = audioCtx.createGain();
+  osc2.type = 'triangle';
+  osc2.frequency.setValueAtTime(freq * 2, startTime);
+
+  // Lowpass filter for smooth acoustic piano tone
+  const filter = audioCtx.createBiquadFilter();
+  filter.type = 'lowpass';
+  filter.frequency.setValueAtTime(1400, startTime);
+  filter.frequency.exponentialRampToValueAtTime(400, startTime + duration);
+
+  // Piano Envelope: Instant soft hammer attack, long singing acoustic decay
+  gain1.gain.setValueAtTime(0.0001, startTime);
+  gain1.gain.linearRampToValueAtTime(velocity, startTime + 0.035);
+  gain1.gain.exponentialRampToValueAtTime(velocity * 0.45, startTime + 0.6);
+  gain1.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
+
+  gain2.gain.setValueAtTime(0.0001, startTime);
+  gain2.gain.linearRampToValueAtTime(velocity * 0.25, startTime + 0.02);
+  gain2.gain.exponentialRampToValueAtTime(0.0001, startTime + (duration * 0.6));
+
+  // Connect Nodes
+  osc1.connect(gain1);
+  gain1.connect(filter);
+
+  osc2.connect(gain2);
+  gain2.connect(filter);
+
+  filter.connect(audioCtx.destination);
+  if (delayNode) filter.connect(delayNode);
+
+  osc1.start(startTime);
+  osc1.stop(startTime + duration);
+
+  osc2.start(startTime);
+  osc2.stop(startTime + duration);
+}
+
+/**
+ * Nostalgic Cello / Strings Warm Bass Resonance
+ */
+function playWarmPad(freq, timeOffset = 0, duration = 4.5) {
+  if (!audioCtx || audioCtx.state !== 'running') return;
+  const startTime = audioCtx.currentTime + timeOffset;
+
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+  const filter = audioCtx.createBiquadFilter();
+
+  osc.type = 'sine';
+  osc.frequency.setValueAtTime(freq, startTime);
+
+  filter.type = 'lowpass';
+  filter.frequency.setValueAtTime(320, startTime);
+
+  gain.gain.setValueAtTime(0.0001, startTime);
+  gain.gain.linearRampToValueAtTime(0.045, startTime + 0.8);
+  gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
+
+  osc.connect(gain);
+  gain.connect(filter);
+  filter.connect(audioCtx.destination);
+
+  osc.start(startTime);
+  osc.stop(startTime + duration);
+}
+
+/**
+ * Soulful & Nostalgic Piano Song (F# Minor / A Major Romantic Nostalgia Sequence)
+ */
+const NOSTALGIC_PIANO_SONG = [
+  // Section 1: Nostalgic Opening (The Beginning of Our Story)
+  { bass: 92.50, pad: 185.00, notes: [{ f: 554.37, t: 0 }, { f: 440.00, t: 0.35 }, { f: 415.30, t: 0.70 }, { f: 440.00, t: 1.05 }, { f: 659.25, t: 1.45 }, { f: 554.37, t: 1.95 }] }, // F#m
+  { bass: 73.42, pad: 146.83, notes: [{ f: 440.00, t: 0 }, { f: 493.88, t: 0.40 }, { f: 554.37, t: 0.80 }, { f: 440.00, t: 1.25 }, { f: 369.99, t: 1.70 }, { f: 440.00, t: 2.10 }] }, // D
+  { bass: 110.00, pad: 220.00, notes: [{ f: 554.37, t: 0 }, { f: 659.25, t: 0.45 }, { f: 739.99, t: 0.90 }, { f: 659.25, t: 1.35 }, { f: 554.37, t: 1.80 }, { f: 440.00, t: 2.20 }] }, // A
+  { bass: 82.41, pad: 164.81, notes: [{ f: 493.88, t: 0 }, { f: 440.00, t: 0.40 }, { f: 415.30, t: 0.80 }, { f: 369.99, t: 1.20 }, { f: 415.30, t: 1.65 }, { f: 493.88, t: 2.10 }] }, // E
+
+  // Section 2: Deep Emotional Core (Reflections & Pure Heart)
+  { bass: 92.50, pad: 185.00, notes: [{ f: 739.99, t: 0 }, { f: 659.25, t: 0.40 }, { f: 554.37, t: 0.85 }, { f: 440.00, t: 1.30 }, { f: 493.88, t: 1.75 }, { f: 554.37, t: 2.15 }] }, // F#m
+  { bass: 73.42, pad: 146.83, notes: [{ f: 554.37, t: 0 }, { f: 493.88, t: 0.38 }, { f: 440.00, t: 0.76 }, { f: 493.88, t: 1.15 }, { f: 554.37, t: 1.60 }, { f: 659.25, t: 2.10 }] }, // D
+  { bass: 110.00, pad: 220.00, notes: [{ f: 659.25, t: 0 }, { f: 554.37, t: 0.45 }, { f: 440.00, t: 0.90 }, { f: 369.99, t: 1.35 }, { f: 440.00, t: 1.80 }, { f: 554.37, t: 2.25 }] }, // A
+  { bass: 82.41, pad: 164.81, notes: [{ f: 493.88, t: 0 }, { f: 415.30, t: 0.50 }, { f: 369.99, t: 1.00 }, { f: 329.63, t: 1.45 }, { f: 415.30, t: 1.95 }] }  // E
+];
+
+let songBarIdx = 0;
+
+function startNostalgicPiano() {
   try {
-    if (!audioCtx) {
-      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    }
-    if (audioCtx.state === 'suspended') {
-      audioCtx.resume();
-    }
-    
+    setupAudioContext();
     isMusicPlaying = true;
+
     const waves = document.getElementById('music-waves');
     const label = document.getElementById('music-label');
     if (waves) waves.classList.remove('paused');
-    if (label) label.textContent = 'Music';
+    if (label) label.textContent = 'Playing 🌹';
 
-    const chords = [
-      [261.63, 329.63, 392.00], // C
-      [220.00, 261.63, 329.63], // Am
-      [174.61, 220.00, 261.63], // F
-      [196.00, 246.94, 293.66], // G
-    ];
-
-    let chordIdx = 0;
-    if (synthInterval) clearInterval(synthInterval);
-
-    synthInterval = setInterval(() => {
+    function playNextBar() {
       if (!isMusicPlaying) return;
-      const currentChord = chords[chordIdx % chords.length];
-      currentChord.forEach((freq, i) => {
-        setTimeout(() => {
-          playBellTone(freq, 1.8);
-        }, i * 350);
+
+      const bar = NOSTALGIC_PIANO_SONG[songBarIdx % NOSTALGIC_PIANO_SONG.length];
+      
+      // Warm bass & cello foundation
+      playWarmPad(bar.pad, 0, 4.0);
+      playPianoNote(bar.bass, 0, 4.0, 0.09);
+
+      // Delicate nostalgic melody notes
+      bar.notes.forEach(n => {
+        playPianoNote(n.f, n.t, 2.8, 0.065);
       });
-      chordIdx++;
-    }, 2400);
+
+      songBarIdx++;
+      pianoMelodyTimeout = setTimeout(playNextBar, 2900);
+    }
+
+    if (pianoMelodyTimeout) clearTimeout(pianoMelodyTimeout);
+    playNextBar();
 
   } catch (e) {
-    console.log('Audio policy:', e);
+    console.log('Audio error:', e);
   }
 }
 
-function stopRomanticAudio() {
-  if (synthInterval) {
-    clearInterval(synthInterval);
-    synthInterval = null;
+function stopNostalgicPiano() {
+  if (pianoMelodyTimeout) {
+    clearTimeout(pianoMelodyTimeout);
+    pianoMelodyTimeout = null;
   }
-}
-
-function playBellTone(freq, duration = 1.2) {
-  if (!audioCtx || audioCtx.state !== 'running') return;
-  
-  const osc = audioCtx.createOscillator();
-  const gain = audioCtx.createGain();
-  
-  osc.type = 'sine';
-  osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-  
-  gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
-  gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
-  
-  osc.connect(gain);
-  gain.connect(audioCtx.destination);
-  
-  osc.start();
-  osc.stop(audioCtx.currentTime + duration);
 }
 
 function playChimeSound() {
   try {
-    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    if (audioCtx.state === 'suspended') audioCtx.resume();
-    
-    [523.25, 659.25, 783.99, 1046.50].forEach((freq, i) => {
-      setTimeout(() => playBellTone(freq, 1.5), i * 120);
+    setupAudioContext();
+    // Warm emotional chime
+    [440.00, 554.37, 659.25, 880.00].forEach((freq, i) => {
+      playPianoNote(freq, i * 0.12, 2.5, 0.07);
     });
   } catch (e) {}
 }

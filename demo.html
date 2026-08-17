@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>DEMO: Birthday Mode Preview (August 27th) 🌹✨</title>
+  
+  <!-- Google Fonts: Playfair Display, Alex Brush, Plus Jakarta Sans, Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Canvas Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  
+  <link rel="stylesheet" href="style.css?v=3.2">
+  <style>
+    /* Demo floating badge */
+    .demo-ribbon {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #e11d48, #be185d);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      z-index: 99999;
+      box-shadow: 0 8px 30px rgba(225, 29, 72, 0.6);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .demo-celebration-banner {
+      background: linear-gradient(135deg, rgba(225, 29, 72, 0.25), rgba(252, 211, 77, 0.2));
+      border: 2px solid rgba(252, 211, 77, 0.6);
+      border-radius: var(--radius-md);
+      padding: 24px 16px;
+      margin-bottom: 24px;
+      animation: pulseGlow 2.5s infinite;
+      box-shadow: 0 0 35px rgba(252, 211, 77, 0.35);
+    }
+    .demo-celebration-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+      text-shadow: 0 0 20px rgba(255, 117, 151, 0.8);
+    }
+    .demo-celebration-sub {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--gold-accent);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Photo Collage Background Layer -->
+  <div class="background-media-layer"></div>
+  <canvas id="particles-canvas"></canvas>
+
+  <div class="demo-ribbon">
+    <span>🎬 PREVIEW DEMO: August 27th Birthday Mode</span>
+  </div>
+
+  <main class="main-content" style="padding-top: 40px;">
+    <section class="hero-section">
+      <div class="container hero-container">
+        
+        <!-- Romantic Calligraphy Emblem for 25 -->
+        <div class="romantic-hero-emblem animate-float">
+          <div class="emblem-script-prefix">Celebrating</div>
+          <div class="emblem-script-title">Twenty-Five</div>
+          <div class="emblem-sub-ribbon">
+            <span class="ribbon-line"></span>
+            <span class="ribbon-text">YEARS OF BEAUTY & GRACE</span>
+            <span class="ribbon-line"></span>
+          </div>
+          <div class="romantic-flourish-divider">❦ ─── 🌹 ─── ❧</div>
+        </div>
+
+        <h1 class="hero-title">Happy 25th Birthday, Roumy</h1>
+        <p class="hero-subtitle">To always stay kind, to always stay Roumy—because you truly have the purest, kindest heart and sweetest soul I have ever seen in my entire life 🌹</p>
+
+        <!-- 🎉 THE AUGUST 27TH CELEBRATION CARD (AFTER COUNTDOWN ENDS) -->
+        <div class="countdown-card glass-panel demo-celebration-banner">
+          <div class="demo-celebration-title">
+            ✨ 🎉 IT'S OFFICIALLY YOUR 25TH BIRTHDAY! 🎂 🌹 ✨
+          </div>
+          <div class="demo-celebration-sub">
+            Today the entire universe celebrates you, my favorite girl in the whole world! 💖
+          </div>
+          <div style="margin-top: 14px;">
+            <span class="glow-button-sm" style="display: inline-flex; align-items: center; gap: 6px;">
+              <span>🎉 Happy Birthday Roumy ✨</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Interactive 3D Birthday Cake -->
+        <div class="cake-interactive-container">
+          <div class="cake-card glass-panel" style="border-color: rgba(252, 211, 77, 0.5);">
+            <div class="cake-wrapper">
+              <div class="cake">
+                <div class="plate"></div>
+                <div class="layer layer-bottom"></div>
+                <div class="layer layer-middle"></div>
+                <div class="layer layer-top">
+                  <div class="icing"></div>
+                  <div class="drip drip1"></div>
+                  <div class="drip drip2"></div>
+                  <div class="drip drip3"></div>
+                </div>
+                <!-- Interactive Candle -->
+                <div class="candle" id="birthday-candle" title="Tap to blow out your candle!">
+                  <div class="flame" id="candle-flame"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="cake-action-text">
+              <p class="cake-instruction" style="color: var(--gold-accent); font-size: 1.05rem;">Make your 25th birthday wish and blow out your candle, Roumy! 🕯️✨</p>
+              <button id="blow-btn" class="glow-button-sm">
+                <span>Blow Candle 🌹</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Trigger celebration confetti immediately on demo page
+    window.addEventListener('load', () => {
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 100,
+          spread: 80,
+          origin: { y: 0.5 },
+          colors: ['#ff5e83', '#fcd34d', '#ffd1dc', '#ffffff', '#e11d48']
+        });
+      }
+    });
+
+    const candle = document.getElementById('birthday-candle');
+    const flame = document.getElementById('candle-flame');
+    const blowBtn = document.getElementById('blow-btn');
+    
+    function blow() {
+      flame.style.opacity = '0';
+      blowBtn.style.display = 'none';
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 80,
+          spread: 90,
+          colors: ['#ff5e83', '#fcd34d', '#fff']
+        });
+      }
+    }
+    candle.addEventListener('click', blow);
+    blowBtn.addEventListener('click', blow);
+  </script>
+</body>
+</html>
