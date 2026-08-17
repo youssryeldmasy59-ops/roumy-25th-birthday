@@ -89,7 +89,7 @@ function initPasscodeGate(config) {
       playChimeSound();
       
       lockScreen.classList.add('unlocked');
-      startNostalgicPiano();
+      playRomanticMusic();
     } else {
       errorMsg.classList.remove('hidden');
       const lockCard = document.querySelector('.lock-card');
@@ -354,33 +354,64 @@ function initWishGenerator() {
 /**
  * -------------------------------------------------------------
  * 🎹 10. Deeply Romantic, Emotional & Nostalgic Piano Soundscape
- * (Inspired by Cinematic Emotional Piano & Nostalgic Memories)
+ * (Studio Quality Real Acoustic Grand Piano at Full Volume)
  * -------------------------------------------------------------
  */
-let audioCtx = null;
+let bgAudio = null;
 let isMusicPlaying = false;
 let pianoMelodyTimeout = null;
-let delayNode = null;
-let reverbGain = null;
 
 function initMusicPlayer() {
+  bgAudio = document.getElementById('romantic-audio-element');
+  if (bgAudio) {
+    bgAudio.volume = 1.0; // 100% Full High Volume & Crystal Clear!
+  }
+
   const toggleBtn = document.getElementById('music-toggle-btn');
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      if (isMusicPlaying) {
+        pauseRomanticMusic();
+      } else {
+        playRomanticMusic();
+      }
+    });
+  }
+}
+
+function playRomanticMusic() {
+  isMusicPlaying = true;
   const waves = document.getElementById('music-waves');
   const label = document.getElementById('music-label');
+  if (waves) waves.classList.remove('paused');
+  if (label) label.textContent = 'Playing 🌹';
 
-  toggleBtn.addEventListener('click', () => {
-    if (isMusicPlaying) {
-      stopNostalgicPiano();
-      waves.classList.add('paused');
-      label.textContent = 'Our Melody';
-      isMusicPlaying = false;
-    } else {
-      startNostalgicPiano();
-      waves.classList.remove('paused');
-      label.textContent = 'Playing 🌹';
-      isMusicPlaying = true;
+  if (bgAudio) {
+    bgAudio.volume = 1.0;
+    const playPromise = bgAudio.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Fallback to synthesized acoustic piano if browser policy blocks audio element
+        startNostalgicPiano();
+      });
     }
-  });
+  } else {
+    startNostalgicPiano();
+  }
+}
+
+function pauseRomanticMusic() {
+  isMusicPlaying = false;
+  const waves = document.getElementById('music-waves');
+  const label = document.getElementById('music-label');
+  if (waves) waves.classList.add('paused');
+  if (label) label.textContent = 'Our Melody';
+
+  if (bgAudio) {
+    bgAudio.pause();
+  }
+  stopNostalgicPiano();
 }
 
 function setupAudioContext() {
