@@ -87,7 +87,7 @@ window.BIRTHDAY_CONFIG = {
 
 Happy 25th Birthday, my love! ✨
 
-Turning 25 is a milestone that deserves all the celebration in the world, and there is nowhere else I’d rather be than right here celebrating the incredible woman you are. Looking at you today, I’m constantly amazed by your growth, your sharp mindset, and your deep awareness. You have this rare combination of brilliant intelligence, graceful strength, and the purest, kindest heart I have ever seen in my life.
+Turning 25 is a milestone that deserves all the celebration in the world, and there is nowhere else I’d rather be than right here celebrating the incredible girl you are. Looking at you today, I’m constantly amazed by your growth, your sharp mindset, and your deep awareness. You have this rare combination of brilliant intelligence, graceful strength, and the purest, kindest heart I have ever seen in my life.
 
 Every single moment with you has become a treasured memory—from our spontaneous mall strolls and iced Spanish latte runs, to late night Instagram calls and the chaotic mirror selfies we take in every single lobby, hotel, and mall fitting room. You make everyday life feel lighter, happier, and full of genuine laughter. (And yes, I will proudly continue to make sure you have the finest luxury perfumes in your collection ✨).
 
@@ -95,6 +95,6 @@ More than anything, I want you to know how deeply I appreciate how you always st
 
 As you step into this iconic chapter 25, never lose the sweetness that makes you who you are. Always stay kind, and always stay Roumy. I wish you endless happiness, unstoppable success, and every dream your heart desires fulfilled. I promise to always be here to hype you up, hold your hand, and love you through every season.
 
-Happy 25th birthday, my queen.`,
+Happy 25th birthday, my girl.`,
   letterSignature: "Forever & always yours,\nLark 🌹✨"
 };
