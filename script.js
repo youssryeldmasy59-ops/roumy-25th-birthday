@@ -364,7 +364,7 @@ let pianoMelodyTimeout = null;
 function initMusicPlayer() {
   bgAudio = document.getElementById('romantic-audio-element');
   if (bgAudio) {
-    bgAudio.volume = 1.0; // 100% Full High Volume & Crystal Clear!
+    bgAudio.volume = 0.55; // Soft, comfortable romantic background volume
     bgAudio.loop = true;
 
     // Endless continuous loop safety
@@ -407,7 +407,7 @@ function playRomanticMusic() {
   if (label) label.textContent = 'Playing 🌹';
 
   if (bgAudio) {
-    bgAudio.volume = 1.0;
+    bgAudio.volume = 0.55;
     const playPromise = bgAudio.play();
     if (playPromise !== undefined) {
       playPromise.catch(() => {
